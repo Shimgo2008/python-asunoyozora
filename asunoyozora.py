@@ -41,19 +41,16 @@ cosh: Callable[[Any], Any] = np.cosh
 #     index += 1
 
 
-E: Final[float] = np.e
 R: Final[float] = 8.314462618 * (10**3)
-k_b: Final[float] = 1.380649 * (10**-23)
 g_0: Final[float] = 9.80665
 M_0: Final[float] = 28.9644
-N_A: Final[float] = 6.02214076 * (10**23)
 r_0: Final[Meter] = Meter(6356.766 * (10**3))
 T_0: Final[Kelvin] = Kelvin(218.5)
 P_0: Final[Pascal] = Pascal(101325)
 H_i: Final[list[GPMeter]] = [GPMeter(0 * 1000), GPMeter(11 * 1000), GPMeter(20 * 1000), GPMeter(32 * 1000), GPMeter(47 * 1000), GPMeter(51 * 1000), GPMeter(71 * 1000), GPMeter(84.852 * 1000)]
+P_b: Final[list[Pascal]] = [Pascal(101325.0), Pascal(17881.924167776844), Pascal(4451.782721266618), Pascal(835.676386546647), Pascal(125.823085025137), Pascal(75.131157658166), Pascal(2.218089806735), Pascal(0.010142033211)]
 T_M_b: Final[list[Kelvin]] = [Kelvin(288.15), Kelvin(216.65), Kelvin(216.65), Kelvin(228.65), Kelvin(270.65), Kelvin(270.65), Kelvin(214.65), Kelvin(186.95)]
 L_M_b: Final[list[float]] = [-6.5 / 1000, 0.0 / 1000, 1.0 / 1000, 2.8 / 1000, 0.0 / 1000, -2.8 / 1000, -2.0 / 1000, 0.0 / 1000]
-P_b: Final[list[Pascal]] = [Pascal(101325.0), Pascal(17881.924167776844), Pascal(4451.782721266618), Pascal(835.676386546647), Pascal(125.823085025137), Pascal(75.131157658166), Pascal(2.218089806735), Pascal(0.010142033211)]
 
 
 class STDATM:
@@ -449,4 +446,3 @@ if __name__ == "__main__":
     std = STDATM(H_t=Human_thickness, H_h=Human_height, m=body_weight)
 
     main(start_time, endtime, step, tol, std)
-    # print(time.time() - start)
