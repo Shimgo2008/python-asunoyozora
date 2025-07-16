@@ -1,5 +1,3 @@
-# import time
-# start = time.time()
 from typing import Any, Callable, Final, NewType, Union
 
 import numpy as np
